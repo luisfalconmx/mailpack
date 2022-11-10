@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Esignatures Generator
+    script(src="https://cdn.tailwindcss.com") 
+    script(src="https://unpkg.com/feather-icons")
+  body(class="bg-[#090c15]")
+    table(class="bg-[#0d111d] table-auto w-full max-w-3xl mx-auto my-12")
+      thead(class="shadow text-[#3C873A]")
+        tr
+          th(class="p-4")
+            b File Listing
+      tbody
+        each file in files
+          tr(class="shadow bg-[#1f272a] block mb-1")
+            td(class="block w-full grid grid-cols-[1fr,auto] justify-items-center")
+              a(href=file.link class="text-white block w-full p-4") #{file.text}
+              if file.download
+                a(href=file.download download=file.text class="w-14 flex items-center justify-center text-white block bg-[#3C873A]")
+                  i(data-feather="download")
+        else
+          li Files not found
+    
+    script.
+      feather.replace() 

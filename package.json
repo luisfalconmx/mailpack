@@ -1,0 +1,33 @@
+{
+  "name": "hornero-signatures",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app/server.js",
+    "build": "node app/build.js",
+    "predeploy": "npm run build",
+    "pretty": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfalconmx/hornero-signatures.git"
+  },
+  "keywords": [
+    "html"
+  ],
+  "author": "luisfalconmx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisfalconmx/hornero-signatures/issues"
+  },
+  "homepage": "https://github.com/luisfalconmx/hornero-signatures#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1"
+  }
+}
