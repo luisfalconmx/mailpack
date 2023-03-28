@@ -1,7 +1,0 @@
-{
-  "workbench.colorTheme": "SynthWave '84",
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "liveServer.settings.donotShowInfoMsg": false
-}
