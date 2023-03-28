@@ -40,7 +40,7 @@ jobs:
         run: npm ci
 
       - name: Publish
-        run: npm publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
@@ -57,10 +57,13 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           registry-url: https://npm.pkg.github.com/
-          scope: '@luisfalconmx/mailpack'
+          scope: '@luisfalconmx'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Temporary creation of npmrc file
+        run: echo registry=https://npm.pkg.github.com/luisfalconmx >> .npmrc
 
       - name: Publish
         run: npm publish
