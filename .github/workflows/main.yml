@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-      
+
       - name: Setup Node js
         uses: actions/setup-node@v3
         with:
@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-      
+
       - name: Setup Node js
         uses: actions/setup-node@v3
         with:
@@ -51,12 +51,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-      
+
       - name: Setup Node js
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
           registry-url: https://npm.pkg.github.com/
+          scope: '@luisfalconmx'
 
       - name: Install dependencies
         run: npm ci
