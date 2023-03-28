@@ -3,6 +3,9 @@
   "version": "0.0.5",
   "description": "",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "engines": {
     "node": "16"
   },
