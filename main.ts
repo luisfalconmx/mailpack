@@ -19,7 +19,12 @@ if (major < minimumVersion) {
 // Register program info
 program.name(name).description(description).version(version)
 
-// Command: create
+// Register all commands
+program
+  .command('setup')
+  .description('Initialize a empty project with all required files')
+  .action(() => create('src'))
+
 program
   .command('create')
   .description('Create a new folder with all required files')
