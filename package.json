@@ -2,7 +2,14 @@
   "name": "mailpack",
   "version": "0.0.7",
   "description": "",
-  "main": "index.js",
+  "author": "luisfalconmx",
+  "license": "MIT",
+  "private": false,
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "bin": {
+    "mailpack": "./dist/main.js"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -10,14 +17,18 @@
     "node": "16"
   },
   "scripts": {
-    "start": "nodemon app/server.js",
-    "build": "node app/build.js",
+    "start": "tsc --watch",
+    "prebuild": "rm -Rf ./dist",
+    "build": "tsc",
+    "postbuild": "./scripts/node-exec-support.sh",
     "predeploy": "npm run build",
-    "pretty": "prettier --write ."
+    "deploy": "npm publish",
+    "lint": "eslint --fix '**/*.{js,ts}'",
+    "pretty": "prettier --ignore-unknown --write ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luisfalconmx/puffet.git"
+    "url": "git+https://github.com/luisfalconmx/mailpack.git"
   },
   "keywords": [
     "typescript",
@@ -25,18 +36,18 @@
     "pug",
     "nodejs"
   ],
-  "author": "luisfalconmx",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luisfalconmx/puffet/issues"
+    "url": "https://github.com/luisfalconmx/mailpack/issues"
   },
-  "homepage": "https://github.com/luisfalconmx/puffet#readme",
+  "homepage": "https://github.com/luisfalconmx/mailpack#readme",
   "dependencies": {
-    "express": "^4.18.1",
+    "commander": "^11.0.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
+    "@types/node": "^20.4.2",
     "nodemon": "^2.0.19",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^5.1.6"
   }
 }

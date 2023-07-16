@@ -1,8 +1,5 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "monokai.theme-monokai-pro-vscode",
-    "pkief.material-icon-theme",
-    "ritwickdey.liveserver"
   ]
 }
