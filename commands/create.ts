@@ -1,7 +1,7 @@
 import { cwd } from 'process'
 import { resolve } from 'path'
 import { mkdir, readdir, writeFile, readFile } from 'fs/promises'
-import type { IDirectory } from './create.d'
+import type { IDirectory } from '../types/create'
 
 const create = async (dir: string) => {
   try {
